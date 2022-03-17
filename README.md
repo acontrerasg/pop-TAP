@@ -28,7 +28,7 @@ The reference genome must have been indexed with bwa index.
 
 ### Example Usage
 
-**First Step:**
+**First Step**
 
 Run get_cov_sample.sh for each one of the samples (including controls) as folllows:
 
@@ -43,7 +43,7 @@ Important: This script expects the pair end raw reads to be adaptor free and to 
  - First mate of the pair: "_1.fastq.gz"
  - Second mate of the pair: "_2.fastq.gz"
 
-**Second Step:** 
+**Second Step** 
 
 Run the main script TE_CNV.sh for each sample to test (you can use the same control  everytime):
 
