@@ -21,7 +21,7 @@ To run this pipeline several packages and tools must be installed and be accessi
  - vroom (R library)
  - dplyr (R library)
 
-It also requeires a GFF file with the TE annotation of the reference genome. 
+It also requeires a GFF file with only the TE annotation of the reference genome. 
 The reference genome must have been indexed with bwa index. 
 
 <br>
