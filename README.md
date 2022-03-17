@@ -26,7 +26,7 @@ The reference genome must have been indexed with bwa index.
 
 <br>
 
-### Example Usage:
+### Example Usage
 
 **First Step:**
 
@@ -38,8 +38,8 @@ Run get_cov_sample.sh for each one of the samples (including controls) as folllo
 > -f first_pair.fq.gz \
 > -t 8
 
-This will create a file with the extension "depthGCcorrected.per10_bp.bed.gz" to the base name of the read pair.
-Important: This script expects the pair end raw reads to be adaptor free and to have the following extensions:
+This will create a file with the extension "depthGCcorrected.per10_bp.bed.gz"  with the base name of the provided read pair.
+Important: This script expects the pair end raw reads to be adaptor free and to have the same name just differing at the following extensions:
  - First mate of the pair: "_1.fastq.gz"
  - Second mate of the pair: "_2.fastq.gz"
 
