@@ -48,7 +48,7 @@ Run the main script TE_CNV.sh for each sample to test ( you can use the same con
 
 Note: Because  TE_CNV.sh  only uses one thread, one can use GNU parallel to run all your samples faster:
 
-> parallel --jobs 8 "bash ./main/TE_CNV.sh -i {} -r control_depthGCcorrected.per10_bp.bed.gz -a TE_annotation_gff \
+> parallel --jobs 8 "bash ./main/TE_CNV.sh -i {} -r control_depthGCcorrected.per10_bp.bed.gz -a TE_annotation.gff \
 > -t 300  -S ./main/Wilcoxon_test.R" ::: *.depthGCcorrected.per10_bp.bed.gz
 
 In this example we run 8 samples at the same time. 
