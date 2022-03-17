@@ -1,6 +1,12 @@
 # pop-TAP
 
-This repository contains custom scripts used to asses transposon absence polymorphisms (TAPs) using pair-end short read illumina data.
+
+Rationale: Most of available tools developed to detect genome-wide copy number variations (CNV) make use complex algorithms because they are challenged by two issues:
+The length and location of the CNV is unknown and also the type of CNV to detect is unkwnown.  A good review of the  topic can be found https://doi.org/10.3389/fgene.2015.00138).
+ ransposon  absence polymorhpisms however, are a type of CNV where location, length and type of CNV to detect are known before hand and, therefore,  more simple algorithms  are sufficient to detect this  type of CNV. 
+
+
+This  pipeline asses transposon absence polymorphisms (TAPs) using pair-end short read illumina data.
 To run this pipeline several packages and tools must be installed and be accessible through  the $PATH : 
  
  - bwa
