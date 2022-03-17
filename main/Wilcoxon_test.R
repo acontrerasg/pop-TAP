@@ -27,7 +27,7 @@ basename <- basename(name)
 name <-  gsub(pattern = ".depthGCcorrected.per10_bp.bed.output.tsv.gz$", "", basename)
 
 summarized_table=paste0(basename,"_summarized_output.tsv")
-filtered_table=paste0(basename,"_filtered_TAPS.tsv")
+filtered_table=paste0(basename,"_TAPS.tsv")
 
 ##############
 
