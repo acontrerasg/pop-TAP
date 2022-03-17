@@ -8,6 +8,7 @@ the length and location of the CNV is unknown and also the type of CNV to detect
 **Pipeline description** <br>
 This pipeline evaluates transposon absence polymorphisms (TAPs) using pair-end short read illumina data. It first calculates GC corrected read depth coverage (RD) per user-defined bin (recommended 10bp) across the whole genome of an array of samples and controls. Then, for every TE present in the provided gff annotation file (recommended to exclude TEs smaller than 300 bp), a non-parametric approach is used to do sample versus control comparitions of bin populations (with a minimun of 30 bins per population if TE < 300 bp were exlcluded). If the tested TE shows a significant difference and also its median RD shows at least a 10 fold reduction than the median sample genome-wide RD, then that sample TE is considered an absence polymorphism. 
 
+**Requeriments** <br>
 To run this pipeline several packages and tools must be installed and be accessible through  the $PATH : 
  
  - bwa
