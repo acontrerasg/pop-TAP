@@ -65,4 +65,4 @@ In this example we run 8 samples at the same time.
 
 For each sample file run with TE_CNV.sh. Two final tables must have beein created:
  -  summarized_output.tsv file  with  the  postion of all tested reference TE plus Pvalues and median calculated coverages. 
- -  TAPs.tsv  same format as previous file  but only the tested reference TEs considered absent in the  tested sample are present. 
+ -  TAPs.tsv  same format as previous file  but only the reference TEs considered absent in the tested sample are present. 
