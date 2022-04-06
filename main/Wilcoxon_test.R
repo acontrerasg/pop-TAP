@@ -20,14 +20,14 @@ annotation <- vroom(args[4], col_names = FALSE, progress = FALSE)
 colnames(annotation) <- c("#chrom", "source" , "feature", "start", "end", ".", "strand", "score", "TE_ID")
 
 #Outrput names:
-#Get path and basename of inpit file 
-name <- as.character(args[1])
+#Get path and basename of inpit file
+name <- as.character(args[5])
 path <- dirname(name)
 basename <- basename(name)
 name <-  gsub(pattern = ".depthGCcorrected.per10_bp.bed.output.tsv.gz$", "", basename)
 
 summarized_table=paste0(basename,"_summarized_output.tsv")
-filtered_table=paste0(basename,"_TAPS.tsv")
+filtered_table=paste0(basename,"_TAPs.tsv")
 
 ##############
 
@@ -56,16 +56,17 @@ input_file_summarized <- final_output %>%  group_by(TE_ID)  %>%
             median_CPM_ref=median(CPM_ref)) %>%
   mutate(padjust_FDR = p.adjust(Wpval, method = "fdr", n = length(Wpval)))
 
-#MERGE TE annotation and   summarized file 
-input_file)summarized <- dplyr::left_join(annotation, input_file_summarized, by="TE_ID")
+#MERGE TE annotation and summarized file
+input_file_summarized <- dplyr::left_join(annotation, input_file_summarized, by="TE_ID")
 
 #Write out output without filtering:
 write.table(input_file_summarized , paste0("./",summarized_table), quote=F, sep='\t', row.names=F, col.names=T)
 
-#Filter putative absences by pvale and  10 times less than mean coverage 
-input_file_filtered <- input_file  %>%  
-  filter(padjust_FDR < 0.05) %>%  
-  filter(mean_coverage < median(input_sum)/10)  
+#Filter putative absences by pvale and  10 times less than median coverage
+input_file_filtered <- input_file_summarized  %>%
+  filter(padjust_FDR < 0.05) %>%
+  filter(median_coverage < median(input_sum)/10)
 
-#Write out filterined: 
+#Write out filterined:
 write.table(input_file_filtered, paste0(path,"/",filtered_table), quote=F, sep='\t', row.names=F, col.names=T)
+
