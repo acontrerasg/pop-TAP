@@ -70,7 +70,7 @@ zcat $reference_file | bedtools  intersect  -wao -a ${temp_TE}  -b - | awk 'BEGI
 cut -f2 ${temp_input_prior} | paste  ${temp_ref_prior} -  | sed '1 i\TE_ID\tref\tinput'  > ${temp_Rinput}
 
 ## Fed this to the  WIlcox Rscript
-Rscript ${Rscript}  ${temp_Rinput} ${temp_total_input}  ${temp_total_ref}  ${temp_TE}
+Rscript ${Rscript}  ${temp_Rinput} ${temp_total_input}  ${temp_total_ref}  ${temp_TE} ${input_file}
 
 ## Cleanup
 rm ${temp_TE}
