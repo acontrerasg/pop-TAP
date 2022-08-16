@@ -31,9 +31,6 @@ while getopts ":hi:r:a:t:S:" arg; do
       ;;
     S) # path to  the R script(Rscript format)
       Rscript=${OPTARG}
-      ;;
-    f) #path to the R script to filter the output. 
-     R_filtering_script=${OPTARG}
     h | *) # Display help.
       usage
       exit 0
