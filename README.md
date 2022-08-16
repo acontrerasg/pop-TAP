@@ -44,9 +44,9 @@ Important: This script expects the pair end raw reads to be adaptor free and to 
 
 **Second Step** 
 
-Run the main script TE_CNV.sh for each sample to test (you can use the same control  everytime):
+Run the main script TAP_main.sh for each sample to test (you can use the same control  everytime):
 
-> bash ./main/TE_CNV.sh \
+> bash ./main/TAP_main.sh \
 > -i sample_depthGCcorrected.per10_bp.bed.gz \
 > -r control_depthGCcorrected.per10_bp.bed.gz \
 > -a TE_annotation_gff \
